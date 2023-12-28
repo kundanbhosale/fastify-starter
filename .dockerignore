@@ -1,0 +1,15 @@
+Dockerfile
+docker*.yml
+.git
+.gitignore
+.config
+.npm
+.vscode
+node_modules
+README.md
+build
+package-lock.json
+
+**/__tests__
+**/__mocks__
+**/seeder.ts

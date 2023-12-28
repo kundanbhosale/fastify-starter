@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    // "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "./build",
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "allowJs": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true ,
+     "typeRoots": ["./node_modules/@types","./src/types"],
+     "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts"],
+  
+}

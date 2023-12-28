@@ -1,0 +1,45 @@
+{
+    "name": "realtime-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "build/index.mjs",
+    "scripts": {
+        "lint": "tsc --noEmit && eslint . --ext .ts",
+        "start": "node dist/index.mjs",
+        "build": "npm run lint && vite build src/index.ts --config vite.config.js",
+        "test:build": "npm run build -- --mode staging",
+        "dev": "nodemon --exec vite-node src/index.ts",
+        "docker:build": "docker build -t realtime-service:latest .",
+        "docker:run": "docker run -d -p 8080:8080 realtime-service:latest",
+        "docker:stop": "docker stop realtime-service",
+        "analyze": "du -sh ./node_modules/* | sort -nr | grep '\\dM.*'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@fastify/cors": "^8.5.0",
+        "@sentry/node": "^7.91.0",
+        "fastify": "^4.25.2",
+        "knex": "^3.1.0",
+        "pg": "^8.11.3",
+        "redis": "^4.6.12",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.5",
+        "@types/pg": "^8.10.9",
+        "@typescript-eslint/eslint-plugin": "^6.16.0",
+        "@typescript-eslint/parser": "^6.16.0",
+        "dotenv": "^16.3.1",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "nodemon": "^3.0.2",
+        "prettier": "^3.1.1",
+        "rollup-plugin-visualizer": "^5.12.0",
+        "terser": "^5.26.0",
+        "typescript": "^5.3.3",
+        "vite": "^4.5.0",
+        "vite-node": "^0.34.6",
+        "vite-plugin-node": "^3.0.2"
+    }
+}
